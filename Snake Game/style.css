@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board{
+    width: 90vmin;
+    height: 90vmin;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+    outline: 20px solid gray;
+}
+
+.head{
+    background-image: url('snakehead.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* transform: rotate(180deg); */
+    z-index: 100;
+    transition: 0.5s;
+}
+.head.right{
+    transform: rotate(360deg);
+}
+.head.left{
+    transform: rotate(-180deg) rotateX(180deg);
+
+}
+.head.up{
+    transform: rotate(-90deg);
+}
+.head.down{
+    transform: rotate(90deg);
+}
+
+.tail{
+    background-image: url('tail.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.snake{
+    background-image: url("snakebody.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+} 
+.snake.horizontal{
+    transform: rotate(360deg);
+}
+.snake.vertical{
+    transform: rotate(-90deg);
+}
+
+
+.food{
+    background-image: url('mouse.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.score{
+    position: absolute;
+    top: 0;
+    font-size: xx-large;
+    font-weight: 900;
+    background-color: blanchedalmond;
+    padding-inline: 1em;
+    border: 1px solid black;
+}
+
+.gameover{
+    position: absolute;
+    z-index: 10;
+    font-size: 3rem;
+    font-weight: 900;
+    top: 30%;
+    letter-spacing: .75rem;
+    word-spacing: 1rem;
+}
+
+@media (max-width: 600px) {
+    .gameover{
+        font-size: 2rem;
+        top: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gameover{
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+}
