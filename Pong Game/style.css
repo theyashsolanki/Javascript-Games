@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board{
+    height: 90vmin;
+    width: 90vmin;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+}
+
+.ball{
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+.paddle-right{
+    background-color: darkred;
+    z-index: 10;
+}
+
+.paddle-left{
+    background-color: blue;
+    z-index: 10;
+}
