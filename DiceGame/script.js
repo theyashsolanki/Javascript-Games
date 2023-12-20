@@ -73,7 +73,7 @@ const getRandomDice = (start, end) => {
 };
 
 const checkWinner = () => {
-  if (score0 >= 10 || score1 >= 10) {
+  if (score0 >= 100 || score1 >= 100) {
     createWinnerEl();
     if (currentPlayer) {
       player1El.classList.add("player--winner");
